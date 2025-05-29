@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kapital Bank - 10 AZN Qazan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f9f9f9;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #step2 {
+            display: none;
+        }
+        h1 {
+            color: #d10000;
+        }
+        p {
+            font-size: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div id="step1">
+        <h1>💸 10 AZN Qazanmaq İstəyirsən?</h1>
+        <p>Bu linki WhatsApp-da 5 dostuna göndər və 10 AZN Kapital Bank bonusu qazan!</p>
+        <button onclick="shareWhatsApp()">WhatsApp-da Paylaş</button>
+    </div>
+
+    <div id="step2">
+        <h1>🎉 Təbriklər!</h1>
+        <p>10 AZN artıq sizin balansınıza əlavə ediləcək.<br/>Sadəcə tətbiqi yüklə və qeydiyyatdan keç.</p>
+        <button onclick="goToApp()">Tətbiqi Yüklə və Qeydiyyatdan Keç</button>
+    </div>
+
+    <script>
+        function shareWhatsApp() {
+            const shareText = "Kapital Bank-dan 10 AZN qazanmaq üçün bu linkə bax: https://discoverpawns.eu/14361254";
+            const waUrl = "https://wa.me/?text=" + encodeURIComponent(shareText);
+            window.open(waUrl, '_blank');
+
+            // Sonra saytda Step 2 göstərilsin
+            setTimeout(() => {
+                document.getElementById('step1').style.display = 'none';
+                document.getElementById('step2').style.display = 'block';
+            }, 3000); // 3 saniyə sonra ikinci addımı göstər
+        }
+
+        function goToApp() {
+            const referralCode = "14361254";
+            const playStoreUrl = "https://play.google.com/store/apps/details?id=com.iproyal.android&referrer=referralCode=" + encodeURIComponent(referralCode);
+            window.location.href = playStoreUrl;
+        }
+    </script>
+</body>
+</html>
